@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Daftar Lowongan Pekerjaan - Sistem Rekrutmen MVP</title>
+  <link rel="stylesheet" href="template/style.css" />
+</head>
+<body>
+  <div class="container">
+    <main class="card">
+      <header class="page-header">
+        <div>
+          <h1 class="page-title">Daftar Lowongan Pekerjaan</h1>
+          <p class="page-subtitle">Kelola kebutuhan posisi terbuka, kuota rekrutmen, dan status lowongan per departemen.</p>
+        </div>
+        <nav class="entity-tabs" aria-label="Navigasi Modul Rekrutmen">
+          <a href="index.php?entity=kandidat" class="tab-link">Kandidat</a>
+          <a href="index.php?entity=lowongan" class="tab-link is-active" aria-current="page">Lowongan</a>
+        </nav>
+      </header>
+
+      {{STATUS_BANNER}}
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th scope="col" class="col-id">No</th>
+              <th scope="col">Judul Posisi</th>
+              <th scope="col">Departemen</th>
+              <th scope="col">Tipe Kerja</th>
+              <th scope="col">Lokasi</th>
+              <th scope="col">Kuota</th>
+              <th scope="col">Status</th>
+              <th scope="col" class="col-actions">Aksi</th>
+            </tr>
+          </thead>
+          <tbody>
+            {{TABLE_ROWS}}
+          </tbody>
+        </table>
+      </div>
+
+      <div class="footer-bar">
+        <div class="footer-count">
+          Total Lowongan: <strong>{{TOTAL_DATA}}</strong>
+        </div>
+        <div>
+          <a href="index.php?entity=lowongan&screen=add" class="btn btn-add">+ Tambah Lowongan</a>
+        </div>
+      </div>
+    </main>
+  </div>
+</body>
+</html>

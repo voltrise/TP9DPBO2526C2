@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>{{FORM_TITLE}} - Sistem Rekrutmen MVP</title>
+  <link rel="stylesheet" href="template/style.css" />
+</head>
+<body>
+  <div class="container container--form">
+    <main class="card">
+      <header class="page-header">
+        <div>
+          <h1 class="page-title">{{FORM_TITLE}}</h1>
+          <p class="page-subtitle">Isi rincian posisi lowongan dan tentukan kuota serta status rekrutmen.</p>
+        </div>
+      </header>
+
+      {{STATUS_BANNER}}
+
+      <form method="post" action="index.php?entity=lowongan" class="form-grid">
+        <input type="hidden" name="entity" value="lowongan">
+        <input type="hidden" name="action" value="{{ACTION}}">
+        <input type="hidden" name="id" value="{{ID}}">
+
+        <div class="form-field">
+          <label for="judul">Judul Posisi</label>
+          <input id="judul" name="judul" type="text" placeholder="Misal: Backend Developer" value="{{JUDUL}}" required>
+        </div>
+
+        <div class="form-field">
+          <label for="departemen">Departemen</label>
+          <input id="departemen" name="departemen" type="text" placeholder="Misal: Engineering" value="{{DEPARTEMEN}}" required>
+        </div>
+
+        <div class="form-field">
+          <label for="tipeKerja">Tipe Kerja</label>
+          <select id="tipeKerja" name="tipeKerja" required>
+            <option value="Full-time" {{TIPE_FULL_TIME}}>Full-time</option>
+            <option value="Part-time" {{TIPE_PART_TIME}}>Part-time</option>
+            <option value="Kontrak" {{TIPE_KONTRAK}}>Kontrak</option>
+            <option value="Magang" {{TIPE_MAGANG}}>Magang</option>
+          </select>
+        </div>
+
+        <div class="form-field">
+          <label for="lokasi">Lokasi</label>
+          <input id="lokasi" name="lokasi" type="text" placeholder="Misal: Bandung" value="{{LOKASI}}" required>
+        </div>
+
+        <div class="form-field">
+          <label for="kuota">Kuota Kebutuhan</label>
+          <input id="kuota" name="kuota" type="number" min="1" step="1" value="{{KUOTA}}" required>
+        </div>
+
+        <div class="form-field">
+          <label for="status">Status Lowongan</label>
+          <select id="status" name="status" required>
+            <option value="Aktif" {{STATUS_AKTIF}}>Aktif</option>
+            <option value="Ditutup" {{STATUS_DITUTUP}}>Ditutup</option>
+          </select>
+        </div>
+
+        <div class="full actions">
+          <a href="index.php?entity=lowongan" class="btn btn-muted">Batal</a>
+          <button type="submit" class="btn btn-primary">Simpan Lowongan</button>
+        </div>
+      </form>
+    </main>
+  </div>
+</body>
+</html>

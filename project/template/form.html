@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>{{FORM_TITLE}} - Sistem Rekrutmen MVP</title>
+  <link rel="stylesheet" href="template/style.css" />
+</head>
+<body>
+  <div class="container container--form">
+    <main class="card">
+      <header class="page-header">
+        <div>
+          <h1 class="page-title">{{FORM_TITLE}}</h1>
+          <p class="page-subtitle">Lengkapi data kandidat dengan nilai skor tes antara 0 sampai 100.</p>
+        </div>
+      </header>
+
+      {{STATUS_BANNER}}
+
+      <form method="post" action="index.php?entity=kandidat" class="form-grid">
+        <input type="hidden" name="entity" value="kandidat">
+        <input type="hidden" name="action" value="{{ACTION}}">
+        <input type="hidden" name="id" value="{{ID}}">
+
+        <div class="form-field">
+          <label for="nama">Nama Kandidat</label>
+          <input id="nama" name="nama" type="text" placeholder="Nama lengkap kandidat" value="{{NAMA}}" required>
+        </div>
+
+        <div class="form-field">
+          <label for="posisi">Posisi Dilamar</label>
+          <input id="posisi" name="posisi" type="text" placeholder="Misal: Backend Developer" value="{{POSISI}}" required>
+        </div>
+
+        <div class="form-field">
+          <label for="domisili">Domisili</label>
+          <input id="domisili" name="domisili" type="text" placeholder="Misal: Bandung" value="{{DOMISILI}}" required>
+        </div>
+
+        <div class="form-field">
+          <label for="skorTes">Skor Tes (0-100)</label>
+          <input id="skorTes" name="skorTes" type="number" min="0" max="100" step="1" value="{{SKOR_TES}}" required>
+        </div>
+
+        <div class="form-field full">
+          <label for="pengalamanTahun">Pengalaman Kerja (Tahun)</label>
+          <input id="pengalamanTahun" name="pengalamanTahun" type="number" min="0" step="1" value="{{PENGALAMAN_TAHUN}}" required>
+        </div>
+
+        <div class="full actions">
+          <a href="index.php?entity=kandidat" class="btn btn-muted">Batal</a>
+          <button type="submit" class="btn btn-primary">Simpan Kandidat</button>
+        </div>
+      </form>
+    </main>
+  </div>
+</body>
+</html>

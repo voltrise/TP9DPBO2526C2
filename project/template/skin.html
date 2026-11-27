@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Daftar Kandidat Karyawan - Sistem Rekrutmen MVP</title>
+  <link rel="stylesheet" href="template/style.css" />
+</head>
+<body>
+  <div class="container">
+    <main class="card">
+      <header class="page-header">
+        <div>
+          <h1 class="page-title">Daftar Kandidat Karyawan</h1>
+          <p class="page-subtitle">Evaluasi skor tes dan pengalaman pelamar berdasarkan posisi lamaran.</p>
+        </div>
+        <nav class="entity-tabs" aria-label="Navigasi Modul Rekrutmen">
+          <a href="index.php?entity=kandidat" class="tab-link is-active" aria-current="page">Kandidat</a>
+          <a href="index.php?entity=lowongan" class="tab-link">Lowongan</a>
+        </nav>
+      </header>
+
+      {{STATUS_BANNER}}
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th scope="col" class="col-id">No</th>
+              <th scope="col">Nama</th>
+              <th scope="col">Posisi Dilamar</th>
+              <th scope="col">Domisili</th>
+              <th scope="col">Skor Tes</th>
+              <th scope="col">Pengalaman</th>
+              <th scope="col" class="col-actions">Aksi</th>
+            </tr>
+          </thead>
+          <tbody>
+            {{TABLE_ROWS}}
+          </tbody>
+        </table>
+      </div>
+
+      <div class="footer-bar">
+        <div class="footer-count">
+          Total Kandidat: <strong>{{TOTAL_DATA}}</strong>
+        </div>
+        <div>
+          <a href="index.php?entity=kandidat&screen=add" class="btn btn-add">+ Tambah Kandidat</a>
+        </div>
+      </div>
+    </main>
+  </div>
+</body>
+</html>
