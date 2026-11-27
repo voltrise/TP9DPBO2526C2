@@ -279,16 +279,3 @@ sequenceDiagram
 2. Aktifkan layanan **Apache** dan **MySQL** melalui XAMPP/Laragon.
 3. Buka `http://localhost/phpmyadmin`, buat atau pilih database, lalu impor berkas `mvp_db.sql` yang tersedia di root repositori (atau di dalam `project/mvp_db.sql`).
 4. Buka `http://localhost/TP9DPBO2526C2/project/index.php` melalui browser.
-
----
-
-## 7. Dokumentasi Pengujian & Status Verifikasi
-
-### A. Ringkasan Verifikasi Kode & Alur HTTP (Sebelum Rekaman Layar)
-- **Lint Sintaks PHP (`php -l`)**: Seluruh 17 berkas PHP di dalam `project/` lolos pengecekan sintaks PHP 8.2.12 tanpa galat.
-- **Audit Statis Strict Passive View & Prepared Statements**: Terverifikasi tidak ada `require_once` ke `models/`, `foreach`, maupun `count()` pada seluruh berkas di `views/`, dan seluruh query pada `TabelKandidat.php` serta `TabelLowongan.php` memakai `executeQuery()` dengan prepared statement.
-- **Uji Alur HTTP End-to-End (Server Preview Lokal + Mock Model)**: Seluruh siklus `GET` daftar, `POST` tambah, `GET` form edit terisi otomatis (*prefill*), `POST` ubah, `POST` hapus, banner status (`added`, `updated`, `deleted`, `invalid`), dan aset `template/style.css` teruji berjalan sesuai spesifikasi.
-- **Catatan Pengujian Live Database**: Pengujian langsung terhadap server MySQL lokal belum dijalankan karena layanan MySQL belum aktif saat penyusunan kode; pastikan mengimpor `mvp_db.sql` dan menyalakan MySQL sebelum merekam dokumentasi.
-
-### B. Dokumentasi Screenrecord
-> **[PLACEHOLDER SCREENRECORD]** Letakkan berkas rekaman layar (`screenrecord`) pengujian fitur CRUD lengkap untuk tabel `kandidat` dan `lowongan` di folder [`dokumentasi/`](dokumentasi/), lalu tautkan di bagian ini sebelum pengumpulan final.
